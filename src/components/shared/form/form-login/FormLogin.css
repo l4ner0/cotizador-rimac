@@ -1,0 +1,9 @@
+.form-check {
+    margin: 32px 0;
+}
+
+.form-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

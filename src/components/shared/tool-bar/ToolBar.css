@@ -1,0 +1,22 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif !important;
+    margin: 20px 32px;
+}
+
+.toolbar__option {
+    display: flex;
+    align-items: center;
+}
+
+.option__img {
+    margin: 0 2px;
+}
+
+.option__text {
+    text-decoration: none;
+    margin: 0 2px;
+    color: #6769FF;
+}
