@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
@@ -31,12 +32,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const buttonDocumentStyles = makeStyles((theme) => ({
-    input: {
-        borderRadius: "0px !important"
-    },
-}))
-
 const GreenCheckbox = withStyles({
     root: {
         color: green[400],
@@ -49,7 +44,6 @@ const GreenCheckbox = withStyles({
 
 const FormLogin = () => {
     const classes = useStyles();
-    const documentClasses = buttonDocumentStyles();
     const [state, setState] = React.useState({
         term: true,
         age: 1
@@ -103,9 +97,11 @@ const FormLogin = () => {
                 />
             </FormGroup>
             <div className="form-button">
-                <Button className={classes.root} variant="contained" color="secondary" size="large" >
-                    Cotízalo
-                </Button>
+                <Link to="/mis-datos">
+                    <Button className={classes.root} variant="contained" color="secondary" size="large" >
+                        Cotízalo
+                    </Button>
+                </Link>
             </div>
         </form>
     )

@@ -1,13 +1,13 @@
 import React from 'react';
-import ToolBar from './shared/tool-bar/ToolBar'
-import Login from './login/Login'
+import ToolBar from './shared/tool-bar/ToolBar';
+import Routes from "../router";
 import './App.css'
 
-function App () {
+function App() {
     return (
         <div className="app">
             <ToolBar />
-            <Login />
+            <Routes />
         </div>
     )
 }
