@@ -9,7 +9,7 @@ const ToolBar = () => {
             </div>
             <div className="toolbar__option">
                 <img className="option__img" src={`/assets/img/ic_phone.png`} alt="telefono" />
-                <a className="option__text" href="#">Llámanos</a>
+                <span className="option__text">Llámanos</span>
             </div>
         </div>
     )

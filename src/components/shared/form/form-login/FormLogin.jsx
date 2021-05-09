@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#EF3340'
     },
     textField: {
-        width: '25ch',
         marginTop: "10px",
         marginBottom: "10px",
         width: "100%"
@@ -28,10 +27,15 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "10px"
     },
     formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: '96px',
     },
 }));
+
+const buttonDocumentStyles = makeStyles((theme) => ({
+    input: {
+        borderRadius: "0px !important"
+    },
+}))
 
 const GreenCheckbox = withStyles({
     root: {
@@ -45,9 +49,10 @@ const GreenCheckbox = withStyles({
 
 const FormLogin = () => {
     const classes = useStyles();
+    const documentClasses = buttonDocumentStyles();
     const [state, setState] = React.useState({
         term: true,
-        age: 10
+        age: 1
     });
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
@@ -55,28 +60,31 @@ const FormLogin = () => {
 
     return (
         <form action="">
-            <FormControl variant="outlined" className={classes.formControl}>
-                <Select
-                    native
-                    value={state.age}
-                    onChange={handleChange}
-                    label="Age"
-                    inputProps={{
-                        name: 'age',
-                        id: 'outlined-age-native-simple',
-                    }}
-                >
-                    <option aria-label="None" value="" />
-                    <option value={10}>Ten</option>
-                    <option value={20}>Twenty</option>
-                    <option value={30}>Thirty</option>
-                </Select>
-            </FormControl>
-            <TextField
-                label="Nro. de doc"
-                className={classes.textField}
-                variant="outlined"
-            />
+            <div className="form-documento">
+                <FormControl variant="outlined" className={classes.formControl}>
+                    <Select
+                        native
+                        value={state.age}
+                        onChange={handleChange}
+                        label="Age"
+                        inputProps={{
+                            name: 'age',
+                            id: 'outlined-age-native-simple',
+                        }}
+                        className="form-documento__select"
+                    >
+                        <option aria-label="None" value="" />
+                        <option value={1}>DNI</option>
+                        <option value={2}>CE</option>
+                        <option value={3}>RUC</option>
+                    </Select>
+                </FormControl>
+                <TextField
+                    label="Nro. de doc"
+                    className="form-documento__text"
+                    variant="outlined"
+                />
+            </div>
             <TextField
                 label="Celular"
                 className={classes.textField}
