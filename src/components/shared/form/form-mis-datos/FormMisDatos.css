@@ -1,0 +1,15 @@
+.form-mis-datos {
+    margin: 0 32px;
+}
+.form-mis-datos__input {
+    width: 100% !important;
+    margin: 10px 0 !important;
+}
+.form-mis-datos__label {
+    font-family: 'Lato' !important;
+    color: #494F66;
+}
+.form-mis-datos__monto {
+    margin: 30px 0;
+    font-family: 'Lato' !important;
+}

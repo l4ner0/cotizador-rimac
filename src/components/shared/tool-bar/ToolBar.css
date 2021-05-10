@@ -19,5 +19,6 @@
     text-decoration: none;
     margin: 0 2px;
     color: #6769FF;
-    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
 }

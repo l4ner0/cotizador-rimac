@@ -1,0 +1,21 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 10px;
+    color: #676F8F;
+    text-transform: uppercase;
+    padding: 8px 32px;
+    border-top: 1px solid #E4E8F7 ;
+    border-bottom: 1px solid #E4E8F7 ;
+}
+
+.breadcrumbs__text {
+    margin: 0 15px;
+    min-width: 60px;
+}
+
+.breadcrumbs__progress {
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+.help-marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7F8FC;
+    border-radius: 8px;
+    margin: 20px 0 32px 0;
+}
+
+.help-marca__img {
+    margin: 16px;
+}
+
+.help-marca__text {
+    color: #676F8F;
+    font-size: 14px;
+}
+
+.help-marca__text a {
+    color: #6F7DFF;
+    font-size: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Lato';
+    font-weight: bold;
+}
