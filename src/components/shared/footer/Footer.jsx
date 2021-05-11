@@ -3,7 +3,9 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div>Footer</div>
+        <div className="footer">
+            <p>© 2020 RIMAC Seguros y Reaseguros.</p>
+        </div>
     )
 }
 

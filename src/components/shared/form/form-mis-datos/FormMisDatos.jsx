@@ -9,6 +9,8 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import './FormMisDatos.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +74,7 @@ const FormMisDatos = () => {
             </FormControl>
             <BoxHelpMarca />
             <div>
-                <span className="form-mis-datos__label">¿Tu auto es a gas?</span>
+                <p className="form-mis-datos__label">¿Tu auto es a gas?</p>
                 <FormControl component="fieldset">
                     <RadioGroup row aria-label="position" name="position" defaultValue="top">
                         <FormControlLabel className="form-mis-datos__label" value="female" control={<GreenRadio value="si" />} label="Sí" />
@@ -81,11 +83,20 @@ const FormMisDatos = () => {
                 </FormControl>
             </div>
             <div className="form-mis-datos__monto">
-                <span className="form-mis-datos__label">Indica la suma asegurada</span>
+                <p className="form-mis-datos__label">Indica la suma asegurada</p>
+                <div className="monto__rango">
+                    <span className="monto__rango-min">MIN $12.500</span>
+                    <span className="monto__rango-max">MAX $16,500</span>
+                </div>
+                <div className="monto__input">
+                    <span className="monto__input-action"><RemoveIcon style={{ color: '#6F7DFF' }} /></span>
+                    <input className="monto__input-text" type="text" />
+                    <span className="monto__input-action"><AddIcon style={{ color: '#6F7DFF' }} /></span>
+                </div>
             </div>
             <div className="form-button">
                 <Button className={classes.root} variant="contained" color="secondary" size="large" >
-                    COntinuar
+                    Continuar
                 </Button>
             </div>
         </form>
