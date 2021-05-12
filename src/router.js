@@ -7,8 +7,8 @@ import ArmaTuPlan from './components/arma-tu-plan/ArmaTuPlan';
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/" component={MisDatos} />
+            <Route exact path="/" component={Login} />
+            <Route exact path="/mis-datos" component={MisDatos} />
             <Route exact path="/arma-tu-plan" component={ArmaTuPlan} />
         </Switch>
     )

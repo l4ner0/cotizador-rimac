@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
@@ -42,66 +41,91 @@ const GreenCheckbox = withStyles({
     checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
-const FormLogin = () => {
+const FormLogin = (props) => {
+    const { documentList, submitCotizalo } = props;
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        term: true,
-        age: 1
+    const form = {
+        term: false,
+        documentType: 1,
+        documento: '',
+        celular: '',
+        placa: ''
+    }
+    const [state, setState] = useState({
+        ...form
     });
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
 
+    const handleInputChange = (event) => {
+        setState({ ...state, [event.target.name]: event.target.value });
+    };
+
+    const handleSubmit = (event) => {
+        submitCotizalo(state);
+        setState({ ...form });
+        event.preventDefault();
+    }
+
     return (
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <div className="form-documento">
                 <FormControl variant="outlined" className={classes.formControl}>
                     <Select
                         native
-                        value={state.age}
+                        value={state.documentType}
                         onChange={handleChange}
-                        label="Age"
                         inputProps={{
-                            name: 'age',
+                            name: 'documentType',
                             id: 'outlined-age-native-simple',
                         }}
                         className="form-documento__select"
                     >
-                        <option aria-label="None" value="" />
-                        <option value={1}>DNI</option>
-                        <option value={2}>CE</option>
-                        <option value={3}>RUC</option>
+                        {
+                            documentList.map(document =>
+                                <option key={document.id} value={document.id}>{document.name}</option>
+                            )
+                        }
                     </Select>
                 </FormControl>
                 <TextField
                     label="Nro. de doc"
                     className="form-documento__text"
                     variant="outlined"
+                    name="documento"
+                    value={state.documento}
+                    onChange={handleInputChange}
                 />
             </div>
             <TextField
                 label="Celular"
                 className={classes.textField}
                 variant="outlined"
+                name="celular"
+                value={state.celular}
+                onChange={handleInputChange}
             />
             <TextField
                 label="Placa"
                 className={classes.textField}
                 variant="outlined"
+                name="placa"
+                value={state.placa}
+                onChange={handleInputChange}
             />
             <FormGroup row className="form-check">
                 <FormControlLabel
                     className={classes.label}
                     control={<GreenCheckbox checked={state.term} onChange={handleChange} name="term" />}
                     label="Acepto la Política de Protección de Datos Personales y los Términos y Condiciones"
+                    name="terms"
                 />
             </FormGroup>
             <div className="form-button">
-                <Link to="/mis-datos">
-                    <Button className={classes.root} variant="contained" color="secondary" size="large" >
-                        Cotízalo
-                    </Button>
-                </Link>
+                <Button type="submit" className={classes.root} variant="contained" color="secondary" size="large" >
+                    Cotízalo
+                </Button>
             </div>
         </form>
     )
