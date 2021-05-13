@@ -18,7 +18,7 @@ const dataInicial = {
     ],
     datos: {},
     vehicleYearsList: [],
-    vehicleBrandsList: [],    
+    vehicleBrandsList: [],
 }
 const SET_DATOS = 'SET_DATOS';
 const SET_VEHICLE_YEARS_LIST = 'SET_VEHICLE_YEARS_LIST';
@@ -41,6 +41,7 @@ export default function cotizadorReducer(state = dataInicial, action) {
 
 // ACCIONES
 export const actionQuoteInsurance = (payload) => async (dispatch, getState) => {
+    console.log(payload)
     const responseApiQuoteInsurance = {
         codRes: "00",
         response: {
@@ -53,7 +54,7 @@ export const actionQuoteInsurance = (payload) => async (dispatch, getState) => {
     }
     dispatch({
         type: SET_DATOS,
-        payload: responseApiQuoteInsurance.response
+        payload: { ...responseApiQuoteInsurance.response, ...payload }
     });
     return responseApiQuoteInsurance
 }
@@ -98,3 +99,7 @@ export const actionVehicleBrands = () => async (dispatch, getState) => {
     });
     return responseApiVehicleBrands
 }
+
+/* export const actionRecordData = (payload) => (dispatch, getState) => {
+
+} */
