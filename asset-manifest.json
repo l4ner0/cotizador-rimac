@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/cotizador-rimac/static/css/main.809d35f9.chunk.css",
-    "main.js": "/cotizador-rimac/static/js/main.4be2ee14.chunk.js",
-    "main.js.map": "/cotizador-rimac/static/js/main.4be2ee14.chunk.js.map",
+    "main.js": "/cotizador-rimac/static/js/main.29bf55c6.chunk.js",
+    "main.js.map": "/cotizador-rimac/static/js/main.29bf55c6.chunk.js.map",
     "runtime-main.js": "/cotizador-rimac/static/js/runtime-main.e0a7f8a5.js",
     "runtime-main.js.map": "/cotizador-rimac/static/js/runtime-main.e0a7f8a5.js.map",
-    "static/js/2.e47a4a6b.chunk.js": "/cotizador-rimac/static/js/2.e47a4a6b.chunk.js",
-    "static/js/2.e47a4a6b.chunk.js.map": "/cotizador-rimac/static/js/2.e47a4a6b.chunk.js.map",
+    "static/js/2.3bf88aa1.chunk.js": "/cotizador-rimac/static/js/2.3bf88aa1.chunk.js",
+    "static/js/2.3bf88aa1.chunk.js.map": "/cotizador-rimac/static/js/2.3bf88aa1.chunk.js.map",
     "index.html": "/cotizador-rimac/index.html",
     "static/css/main.809d35f9.chunk.css.map": "/cotizador-rimac/static/css/main.809d35f9.chunk.css.map",
-    "static/js/2.e47a4a6b.chunk.js.LICENSE.txt": "/cotizador-rimac/static/js/2.e47a4a6b.chunk.js.LICENSE.txt"
+    "static/js/2.3bf88aa1.chunk.js.LICENSE.txt": "/cotizador-rimac/static/js/2.3bf88aa1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e0a7f8a5.js",
-    "static/js/2.e47a4a6b.chunk.js",
+    "static/js/2.3bf88aa1.chunk.js",
     "static/css/main.809d35f9.chunk.css",
-    "static/js/main.4be2ee14.chunk.js"
+    "static/js/main.29bf55c6.chunk.js"
   ]
 }
