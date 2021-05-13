@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { apiQuoteInsurance, apiVehicleYears, apiVehicleBrands } from '../apis/cotizador';
 
 // CONSTANTES
 const dataInicial = {
@@ -41,17 +41,7 @@ export default function cotizadorReducer(state = dataInicial, action) {
 
 // ACCIONES
 export const actionQuoteInsurance = (payload) => async (dispatch, getState) => {
-    console.log(payload)
-    const responseApiQuoteInsurance = {
-        codRes: "00",
-        response: {
-            nombre: 'Diego',
-            vehicleYear: 2019,
-            vehicleBrand: 1,
-            minimumAmount: 12500,
-            maximumAmount: 16500
-        }
-    }
+    const { data: responseApiQuoteInsurance } = await apiQuoteInsurance(payload);
     dispatch({
         type: SET_DATOS,
         payload: { ...responseApiQuoteInsurance.response, ...payload }
@@ -60,10 +50,7 @@ export const actionQuoteInsurance = (payload) => async (dispatch, getState) => {
 }
 
 export const actionVehicleYears = () => async (dispatch, getState) => {
-    const responseApiVehicleYears = {
-        codRes: "00",
-        response: [2016, 2017, 2018, 2019, 2020, 2021]
-    }
+    const { data: responseApiVehicleYears } = await apiVehicleYears();
     dispatch({
         type: SET_VEHICLE_YEARS_LIST,
         payload: responseApiVehicleYears.response
@@ -72,27 +59,7 @@ export const actionVehicleYears = () => async (dispatch, getState) => {
 }
 
 export const actionVehicleBrands = () => async (dispatch, getState) => {
-    const responseApiVehicleBrands = {
-        codRes: "00",
-        response: [
-            {
-                id: 1,
-                name: "BMW"
-            },
-            {
-                id: 2,
-                name: "Wolkswagen"
-            },
-            {
-                id: 3,
-                name: "Audi"
-            },
-            {
-                id: 4,
-                name: "Renault"
-            }
-        ]
-    }
+    const { data: responseApiVehicleBrands } = await apiVehicleBrands();
     dispatch({
         type: SET_VEHICLE_BRANDS_LIST,
         payload: responseApiVehicleBrands.response
