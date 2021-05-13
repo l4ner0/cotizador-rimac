@@ -1,5 +1,4 @@
 import React from 'react';
-import clientBanner from '../../../assets/img/client-banner.svg';
 import './Hero.css'
 
 const Hero = () => {
@@ -11,7 +10,7 @@ const Hero = () => {
                 <p className="text__footer">Cuentanos donde le haras seguimiento a tu seguro</p>
             </div>
             <div>
-                <img className="hero__img" src={clientBanner} alt="cliente-banner" />
+                <img className="hero__img" src="https://i.postimg.cc/R62KCkcD/client-banner.png" alt="cliente-banner" />
             </div>
         </div>
     )

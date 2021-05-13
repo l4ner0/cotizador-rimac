@@ -1,7 +1,6 @@
 import React from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core/styles';
-import ellipse from '../../../assets/img/ellipse.svg'
 import './Breadcrumbs.css'
 
 const BorderLinearProgress = withStyles((theme) => ({
@@ -23,7 +22,7 @@ const Breadcrumbs = () => {
     return (
         <div className="breadcrumbs">
             <div className="breadcrumbs__previous">
-                <img src={ellipse} alt="atras"/>
+                <img width="24" src="https://i.postimg.cc/ZBW6SbyN/ellipse.png" alt="atras"/>
             </div>
             <div className="breadcrumbs__text">Paso 1 de 2</div>
             <div className="breadcrumbs__progress">
