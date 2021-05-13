@@ -30,7 +30,7 @@ const GreenRadio = withStyles({
         },
     },
     checked: {},
-})((props) => <Radio color="default" {...props} />);
+})((props) => <Radio required color="default" {...props} />);
 
 const FormMisDatos = (props) => {
     const { vehicleYearsList, vehicleBrandsList, minimumAmount, maximumAmount } = props;
@@ -63,6 +63,7 @@ const FormMisDatos = (props) => {
             <FormControl variant="outlined" className="form-mis-datos__input">
                 <InputLabel id="demo-customized-select-label">Año</InputLabel>
                 <Select
+                    required
                     native
                     value={state.year}
                     onChange={handleInputChange}
@@ -82,6 +83,7 @@ const FormMisDatos = (props) => {
             <FormControl variant="outlined" className="form-mis-datos__input">
                 <InputLabel id="demo-customized-select-label">Marca</InputLabel>
                 <Select
+                    required
                     native
                     value={state.brand}
                     onChange={handleInputChange}
@@ -116,7 +118,7 @@ const FormMisDatos = (props) => {
                 </div>
                 <div className="monto__input">
                     <span className="monto__input-action" onClick={decreaseAmount}><RemoveIcon style={{ color: '#6F7DFF' }} /></span>
-                    <input className="monto__input-text" type="text" value={state.amount} onChange={handleInputChange} />
+                    <input className="monto__input-text" name="amount" required type="text" value={state.amount} onChange={handleInputChange} />
                     <span className="monto__input-action" onClick={increaseAmount}><AddIcon style={{ color: '#6F7DFF' }} /></span>
                 </div>
             </div>

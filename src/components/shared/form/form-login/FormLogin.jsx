@@ -57,7 +57,7 @@ const FormLogin = (props) => {
     };
 
     const handleInputChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.value });
+        setState({ ...state, [event.target.name]: (event.target.value).toUpperCase() });
     };
 
     const handleSubmit = (event) => {
@@ -71,6 +71,7 @@ const FormLogin = (props) => {
             <div className="form-documento">
                 <FormControl variant="outlined" className={classes.formControl}>
                     <Select
+                        required
                         native
                         value={state.documentType}
                         onChange={handleChange}
@@ -88,6 +89,7 @@ const FormLogin = (props) => {
                     </Select>
                 </FormControl>
                 <TextField
+                    required
                     label="Nro. de doc"
                     className="form-documento__text"
                     variant="outlined"
@@ -97,6 +99,8 @@ const FormLogin = (props) => {
                 />
             </div>
             <TextField
+                required
+
                 label="Celular"
                 className={classes.textField}
                 variant="outlined"
@@ -105,6 +109,7 @@ const FormLogin = (props) => {
                 onChange={handleInputChange}
             />
             <TextField
+                required
                 label="Placa"
                 className={classes.textField}
                 variant="outlined"
@@ -115,7 +120,7 @@ const FormLogin = (props) => {
             <FormGroup row className="form-check">
                 <FormControlLabel
                     className={classes.label}
-                    control={<GreenCheckbox checked={state.term} onChange={handleChange} name="term" />}
+                    control={<GreenCheckbox checked={state.term} onChange={handleChange} name="term" required />}
                     label="Acepto la Política de Protección de Datos Personales y los Términos y Condiciones"
                     name="terms"
                 />

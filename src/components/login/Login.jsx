@@ -18,7 +18,7 @@ const Login = () => {
         }
     }
     return (
-        <div>
+        <div className="login">
             <Hero />
             <p className="form-container form-titulo">Déjanos tus datos</p>
             <div className="form-container">

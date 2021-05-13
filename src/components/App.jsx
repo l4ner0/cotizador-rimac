@@ -10,9 +10,11 @@ function App() {
     const store = generateStore()
     return (
         <Provider store={store}>
-            <ToolBar />
-            <Routes />
-            <Footer />
+            <div className="app">
+                <ToolBar />
+                <Routes />
+                <Footer />
+            </div>
         </Provider>
     )
 }
