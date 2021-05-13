@@ -14,7 +14,7 @@ const Login = () => {
     const submitCotizalo = async (payload) => {
         const { codRes } = await dispatch(actionQuoteInsurance(payload));
         if (codRes === "00") {
-            history.push('/mis-datos')
+            history.push('/cotizador-rimac/mis-datos')
         }
     }
     return (
