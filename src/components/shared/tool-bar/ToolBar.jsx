@@ -1,14 +1,16 @@
 import React from 'react';
 import './ToolBar.css'
+import logo from '../../../assets/img/logo-rimac.svg';
+import phone from '../../../assets/img/ic_phone.png';
 
 const ToolBar = () => {
     return (
         <div className="toolbar">
             <div className="toolbar__logo">
-                <img src={`/assets/img/logo-rimac.svg`} alt="logo"/> 
+                <img src={logo} alt="logo"/> 
             </div>
             <div className="toolbar__option">
-                <img className="option__img" src={`/assets/img/ic_phone.png`} alt="telefono" />
+                <img className="option__img" src={phone} alt="telefono" />
                 <span className="option__text">Llámanos</span>
             </div>
         </div>
