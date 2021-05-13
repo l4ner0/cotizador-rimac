@@ -29,6 +29,9 @@
     border: none;
     height: 24px;
     width: 100%;
+    text-align: center;
+    color: #494F66;
+    font-family: 'Lato';
 }
 .monto__input-text:focus {
     border: none;

@@ -51,9 +51,7 @@ const FormLogin = (props) => {
         celular: '',
         placa: ''
     }
-    const [state, setState] = useState({
-        ...form
-    });
+    const [state, setState] = useState({ ...form });
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };

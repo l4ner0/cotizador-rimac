@@ -1,9 +1,9 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import loginReducer from './loginDucks';
+import cotizadorReducer from './cotizadorDucks';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-    cotizadorRimac: loginReducer
+    cotizadorRimac: cotizadorReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
