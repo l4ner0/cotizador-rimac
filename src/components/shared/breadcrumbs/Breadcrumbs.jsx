@@ -18,15 +18,16 @@ const BorderLinearProgress = withStyles((theme) => ({
     },
 }))(LinearProgress);
 
-const Breadcrumbs = () => {
+const Breadcrumbs = (props) => {
+    const { step, stepTotal, value } = props;
     return (
         <div className="breadcrumbs">
             <div className="breadcrumbs__previous">
-                <img width="24" src="https://i.postimg.cc/ZBW6SbyN/ellipse.png" alt="atras"/>
+                <img width="24" src="https://i.postimg.cc/ZBW6SbyN/ellipse.png" alt="atras" />
             </div>
-            <div className="breadcrumbs__text">Paso 1 de 2</div>
+            <div className="breadcrumbs__text">Paso {step} de {stepTotal}</div>
             <div className="breadcrumbs__progress">
-                <BorderLinearProgress variant="determinate" value={50} />
+                <BorderLinearProgress variant="determinate" value={value} />
             </div>
         </div>
     )

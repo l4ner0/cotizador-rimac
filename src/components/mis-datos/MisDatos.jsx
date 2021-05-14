@@ -41,7 +41,7 @@ const MisDatos = () => {
     } */
     return (
         <div>
-            <Breadcrumbs />
+            <Breadcrumbs step="1" stepTotal="2" value={50} />
             <div className="mis-datos__title">
                 <p className="title__name">¡Hola, <span className="title__name--red">{nombre}</span></p>
                 <p className="title__info">Completa los datos de tu auto</p>

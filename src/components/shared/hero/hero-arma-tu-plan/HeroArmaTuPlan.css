@@ -1,0 +1,59 @@
+.hero-plan {
+    background-color: #F7F8FC;
+    padding: 32px 40px;
+}
+
+.hero-plan__title {
+    font-size: 26px;
+    font-weight: 400;  
+    font-family: 'Lato';
+    margin-bottom: 8px;
+    color: #494F66
+}
+
+.hero-plan__subtitle {
+    color: #676F8F;
+    margin-bottom: 24px;
+}
+
+.hero-plan__box-plan {
+    background-color: #FFF;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    min-height: 100px;
+
+}
+
+.box-plan__info-placa {
+    color: #A3ABCC;
+    font-size: 12px;
+}
+
+.box-plan__info-brand {
+    color: #494F66;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.box-plan__info-edit-button {
+    font-size: 10px;
+    color: #6F7DFF;
+    font-family: 'Lato';
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.box-plan__img {
+    position: relative;
+    height: inherit !important;
+    min-height: 100px;
+}
+
+.img-avatar{
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+}

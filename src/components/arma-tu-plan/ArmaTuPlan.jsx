@@ -1,9 +1,12 @@
 import React from 'react';
+import Breadcrumbs from '../shared/breadcrumbs/Breadcrumbs';
+import HeroArmaTuPlan from '../shared/hero/hero-arma-tu-plan/HeroArmaTuPlan';
 
 const ArmaTuPlan = () => {
     return(
         <div>          
-            <h1>Arma tu plan</h1>
+           <Breadcrumbs step="2" stepTotal="2" value={100} />
+           <HeroArmaTuPlan />
         </div>
     )
 }
