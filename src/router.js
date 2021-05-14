@@ -4,9 +4,9 @@ import Login from './components/login/Login';
 import MisDatos from './components/mis-datos/MisDatos';
 import ArmaTuPlan from './components/arma-tu-plan/ArmaTuPlan';
 
-export const LOGIN = '/arma-tu-plan';
-export const MIS_DATOS = '/mis-datos';
-export const ARMA_TU_PLAN = '/';
+export const LOGIN = '/cotizador-rimac';
+export const MIS_DATOS = '/cotizador-rimac/mis-datos';
+export const ARMA_TU_PLAN = '/cotizador-rimac/arma-tu-plan';
 
 const Routes = () => {
     return (

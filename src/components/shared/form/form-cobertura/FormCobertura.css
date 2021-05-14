@@ -1,0 +1,86 @@
+.form-cobertura {
+    margin-top: 56px;
+}
+.form-cobertura__title {
+    padding: 0 32px;
+    color: #494F66;
+    font-size: 20px;
+    font-family: 'Lato';
+    margin-bottom: 25px;
+    font-weight: 400px;
+}
+
+.tab-cobertura {
+    display: flex;
+    border-bottom: 1px solid #E4E8F7;
+    padding: 20px 0;
+}
+
+.tab-cobertura_content{
+    margin-left: 16px;
+}
+
+.tab-cobertura_content .MuiPaper-elevation1{
+    box-shadow: none;
+}
+
+.tab-cobertura_content .MuiAccordionSummary-root.Mui-expanded {
+    min-height: initial;
+}
+
+.tab-cobertura_content .MuiAccordionSummary-content.Mui-expanded {
+    margin: 0;
+}
+
+.tab-cobertura_content .MuiAccordionSummary-root {
+    padding: 0;
+}
+
+.tab-cobertura_content .MuiAccordionDetails-root {
+    padding: 0;
+}
+
+.tab-cobertura_content-title {
+    font-family: 'Lato';
+    color: #494F66;    
+}
+
+.tab-cobertura_content-text {
+    color: #676F8F;
+    font-size: 13px;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.tab-cobertura_content-title {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.tab-cobertura_content-title--small {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #A3ABCC;
+    padding: 10px 0;
+}
+
+.form-cobertura__footer {
+    margin-top: 10px;
+    display: flex;
+    padding: 10px 32px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__monto--primary {
+    font-size: 24px;
+    color: #494F66;
+    font-family: 'Lato';
+}
+
+.footer__monto--secondary {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #494F66;
+}
