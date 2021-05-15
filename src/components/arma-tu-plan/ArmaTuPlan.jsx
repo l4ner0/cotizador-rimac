@@ -4,7 +4,7 @@ import Breadcrumbs from '../shared/breadcrumbs/Breadcrumbs';
 import HeroArmaTuPlan from '../shared/hero/hero-arma-tu-plan/HeroArmaTuPlan';
 import FormCobertura from '../shared/form/form-cobertura/FormCobertura';
 import { actionRecordCoberturas } from '../../redux/cotizadorDucks';
-import { LOGIN } from '../../router';
+import { LOGIN, MIS_DATOS } from '../../router';
 import { useHistory } from 'react-router-dom';
 
 const ArmaTuPlan = () => {
@@ -18,7 +18,10 @@ const ArmaTuPlan = () => {
         localStorage.setItem("datos", JSON.stringify(datos));
         recoveredData = datos;
     }
-    const {placa, brand, year} = recoveredData;
+    const { placa, brand, year } = recoveredData;
+    const backStep = async () => {
+        history.push(MIS_DATOS);
+    }
     const clickLoQuiero = async (payload) => {
         const { codRes } = await dispatch(actionRecordCoberturas(payload));
         if (codRes === "00") {
@@ -28,7 +31,7 @@ const ArmaTuPlan = () => {
     return (
         <div>
             <Breadcrumbs step="2" stepTotal="2" value={100} />
-            <HeroArmaTuPlan placa={placa} brand={brand} year={year} />
+            <HeroArmaTuPlan placa={placa} brand={brand} year={year} backStep={backStep} />
             <FormCobertura clickLoQuiero={clickLoQuiero} />
         </div>
     )

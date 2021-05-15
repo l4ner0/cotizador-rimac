@@ -42,7 +42,7 @@ const GreenCheckbox = withStyles({
 })((props) => <Checkbox color="default" {...props} />);
 
 const FormLogin = (props) => {
-    const { documentList, submitCotizalo } = props;
+    const { documentList, submitCotizalo, loading } = props;
     const classes = useStyles();
     const form = {
         term: false,
@@ -51,7 +51,7 @@ const FormLogin = (props) => {
         celular: '',
         placa: ''
     }
-    const [state, setState] = useState({ ...form });
+    const [state, setState] = useState({ ...form, loading: false });
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
@@ -60,10 +60,12 @@ const FormLogin = (props) => {
         setState({ ...state, [event.target.name]: (event.target.value).toUpperCase() });
     };
 
-    const handleSubmit = (event) => {
-        submitCotizalo(state);
-        setState({ ...form });
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        setState({ ...state, loading: true });
+        await submitCotizalo(state);
+        setState({ ...form, loading: false });
+
     }
 
     return (
@@ -126,8 +128,8 @@ const FormLogin = (props) => {
                 />
             </FormGroup>
             <div className="form-button">
-                <Button type="submit" className={classes.root} variant="contained" color="secondary" size="large" >
-                    Cotízalo
+                <Button type="submit" className={classes.root} variant="contained" color="secondary" size="large" disabled={state.loading} >
+                    {state.loading ? 'Cotizando...' : 'Cotízalo'}
                 </Button>
             </div>
         </form>

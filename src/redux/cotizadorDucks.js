@@ -1,4 +1,4 @@
-import { apiQuoteInsurance, apiVehicleYears, apiVehicleBrands } from '../apis/cotizador';
+import { apiQuoteInsurance, apiVehicleYears, apiVehicleBrands, apiRecordData, apiRecordCoberturas } from '../apis/cotizador';
 
 // CONSTANTES
 const dataInicial = {
@@ -67,27 +67,17 @@ export const actionVehicleBrands = () => async (dispatch, getState) => {
     return responseApiVehicleBrands;
 }
 
-export const actionRecordData = (payload) => (dispatch, getState) => {
-    const responseApiRecordData = {
-        codRes: "00",
-        response: {
-            codigoProspecto: 290345
-        }
-    }
+export const actionRecordData = (payload) => async (dispatch, getState) => {
+    const { data: responseApiRecordData } = await apiRecordData();
     const { cotizadorRimac: { datos } } = getState();
     dispatch({
         type: SET_DATOS,
-        payload: { ...responseApiRecordData.response, ...payload, ...datos }
+        payload: { ...datos, ...responseApiRecordData.response, ...payload }
     });
     return responseApiRecordData;
 }
 
-export const actionRecordCoberturas = (payload) => (dispatch, getSate) => {
-    const responseApiRecordCoberturas = {
-        codRes: "00",
-        response: {
-            codigoProspecto: 290345
-        }
-    }
+export const actionRecordCoberturas = (payload) => async (dispatch, getSate) => {
+    const { data: responseApiRecordCoberturas } = await apiRecordCoberturas();
     return responseApiRecordCoberturas;
 }

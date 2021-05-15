@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import './HeroArmaTuPlan.css';
 
 const HeroArmaTuPlan = (props) => {
-    const { placa, brand, year } = props;
+    const { placa, brand, year, backStep } = props;
     return (
         <div className="hero-plan">
             <p className="hero-plan__title">Mira las coberturas</p>
@@ -13,7 +13,7 @@ const HeroArmaTuPlan = (props) => {
                     <p className="box-plan__info-placa">Placa: {placa}</p>
                     <p className="box-plan__info-brand">{brand} {year}</p>
                     <div className="box-plan__info-edit">
-                        <a className="box-plan__info-edit-button">Editar</a>
+                        <a className="box-plan__info-edit-button" onClick={backStep}>Editar</a>
                     </div>
                 </div>
                 <div className="box-plan__img">

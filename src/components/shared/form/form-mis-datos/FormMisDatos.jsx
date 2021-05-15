@@ -41,7 +41,7 @@ const FormMisDatos = (props) => {
         amount: maximumAmount,
         isGasVehicle: null
     };
-    const [state, setState] = useState({ ...form });
+    const [state, setState] = useState({ ...form, loading: false });
     const handleInputChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.value });
     };
@@ -54,9 +54,12 @@ const FormMisDatos = (props) => {
         const newAmount = state.amount - interval;
         setState({ ...state, amount: newAmount });
     }
-    const handleSubmit = (event) => {
-        submitContinue(state);        
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        setState({ ...state, loading: true });
+        await submitContinue(state);
+        setState({ ...state, loading: false });
+
     }
     return (
         <form onSubmit={handleSubmit} className="form-mis-datos">
@@ -123,8 +126,8 @@ const FormMisDatos = (props) => {
                 </div>
             </div>
             <div className="form-button">
-                <Button className={classes.root} type="submit" variant="contained" color="secondary" size="large" >
-                    Continuar
+                <Button className={classes.root} type="submit" variant="contained" color="secondary" size="large" disabled={state.loading} >
+                    {state.loading ? 'Registrando...' : 'Continuar'}
                 </Button>
             </div>
         </form>

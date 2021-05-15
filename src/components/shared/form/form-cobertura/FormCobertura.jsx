@@ -104,7 +104,8 @@ const FormCobertura = (props) => {
         amount: 20,
         amountRoboParcial: 15,
         amountChoque: 20,
-        amountAccidente: 50
+        amountAccidente: 50,
+        loading: false
     });
     const handleTabChange = (event, value) => {
         setState({ ...state, tab: value });
@@ -119,6 +120,11 @@ const FormCobertura = (props) => {
     const handleAcordionChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
+    const handleClick = async () => {
+        setState({ ...state, loading: true });
+        await clickLoQuiero()
+        setState({ ...state, loading: false });
+    }
     return (
         <div className="form-cobertura">
             <p className="form-cobertura__title">Agregar o quita coberturas </p>
@@ -224,8 +230,8 @@ const FormCobertura = (props) => {
                     <span className="footer__monto--secondary">Mensual</span>
                 </div>
                 <div>
-                    <Button variant="contained" color="secondary" size="large" onClick={clickLoQuiero}>
-                        Lo quiero
+                    <Button variant="contained" color="secondary" size="large" onClick={handleClick} disabled={state.loading}>
+                        {state.loading ? 'Registrando...' : 'Lo quiero'}
                     </Button>
                 </div>
             </div>
