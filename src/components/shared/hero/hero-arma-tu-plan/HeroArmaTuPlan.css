@@ -38,7 +38,7 @@
     margin-bottom: 16px;
 }
 
-.box-plan__info-edit-button {
+.box-plan__info-edit-button .MuiButton-label {
     font-size: 10px;
     color: #6F7DFF;
     font-family: 'Lato';

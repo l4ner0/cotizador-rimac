@@ -10,7 +10,7 @@ import './Login.css';
 const Login = () => {
     localStorage.clear();
     const history = useHistory();
-    const { documentList, datos } = useSelector(store => store.cotizadorRimac);
+    const { documentList } = useSelector(store => store.cotizadorRimac);
     const dispatch = useDispatch();
     const submitCotizalo = async (payload) => {
         const { codRes } = await dispatch(actionQuoteInsurance(payload));

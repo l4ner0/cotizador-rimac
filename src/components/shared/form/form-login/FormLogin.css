@@ -20,6 +20,10 @@
     border-bottom-right-radius: 0px !important;
 }
 
+.form-documento__text {
+    width: 100% !important;
+}
+
 .form-documento__text > .MuiInputBase-root {
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;

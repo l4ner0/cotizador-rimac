@@ -13,7 +13,7 @@ const HeroArmaTuPlan = (props) => {
                     <p className="box-plan__info-placa">Placa: {placa}</p>
                     <p className="box-plan__info-brand">{brand} {year}</p>
                     <div className="box-plan__info-edit">
-                        <a className="box-plan__info-edit-button" onClick={backStep}>Editar</a>
+                        <Button className="box-plan__info-edit-button" size="small" onClick={backStep}>Editar</Button>
                     </div>
                 </div>
                 <div className="box-plan__img">

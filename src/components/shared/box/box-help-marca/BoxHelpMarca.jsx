@@ -9,7 +9,7 @@ const BoxHelpMarca = () => {
             </div>
             <div className="help-marca__text">
                 <p>¿No encuentras el modelo?</p>
-                <a href="#">Clic Aquí</a>
+                <a href="https://www.rimac.com/" target="_blank" rel="noreferrer">Clic Aquí</a>
             </div>
         </div>
     )

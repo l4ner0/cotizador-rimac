@@ -13,7 +13,6 @@ const MisDatos = () => {
     useEffect(() => {
         getVehicleData()
     }, []);
-
     const getVehicleData = async () => {
         const { codRes: codResYears } = await dispatch(actionVehicleYears());
         const { codRes: codReBrands } = await dispatch(actionVehicleBrands());

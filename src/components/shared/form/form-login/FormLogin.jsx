@@ -42,7 +42,7 @@ const GreenCheckbox = withStyles({
 })((props) => <Checkbox color="default" {...props} />);
 
 const FormLogin = (props) => {
-    const { documentList, submitCotizalo, loading } = props;
+    const { documentList, submitCotizalo } = props;
     const classes = useStyles();
     const form = {
         term: false,
