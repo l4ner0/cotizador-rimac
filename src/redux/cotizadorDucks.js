@@ -46,7 +46,7 @@ export const actionQuoteInsurance = (payload) => async (dispatch, getState) => {
         type: SET_DATOS,
         payload: { ...responseApiQuoteInsurance.response, ...payload }
     });
-    return responseApiQuoteInsurance
+    return responseApiQuoteInsurance;
 }
 
 export const actionVehicleYears = () => async (dispatch, getState) => {
@@ -55,7 +55,7 @@ export const actionVehicleYears = () => async (dispatch, getState) => {
         type: SET_VEHICLE_YEARS_LIST,
         payload: responseApiVehicleYears.response
     });
-    return responseApiVehicleYears
+    return responseApiVehicleYears;
 }
 
 export const actionVehicleBrands = () => async (dispatch, getState) => {
@@ -64,9 +64,30 @@ export const actionVehicleBrands = () => async (dispatch, getState) => {
         type: SET_VEHICLE_BRANDS_LIST,
         payload: responseApiVehicleBrands.response
     });
-    return responseApiVehicleBrands
+    return responseApiVehicleBrands;
 }
 
-/* export const actionRecordData = (payload) => (dispatch, getState) => {
+export const actionRecordData = (payload) => (dispatch, getState) => {
+    const responseApiRecordData = {
+        codRes: "00",
+        response: {
+            codigoProspecto: 290345
+        }
+    }
+    const { cotizadorRimac: { datos } } = getState();
+    dispatch({
+        type: SET_DATOS,
+        payload: { ...responseApiRecordData.response, ...payload, ...datos }
+    });
+    return responseApiRecordData;
+}
 
-} */
+export const actionRecordCoberturas = (payload) => (dispatch, getSate) => {
+    const responseApiRecordCoberturas = {
+        codRes: "00",
+        response: {
+            codigoProspecto: 290345
+        }
+    }
+    return responseApiRecordCoberturas;
+}

@@ -93,22 +93,27 @@ TabPanel.propTypes = {
     value: PropTypes.any.isRequired,
 };
 
-const FormCobertura = () => {
+const FormCobertura = (props) => {
+    const { clickLoQuiero } = props;
     const classes = useStyles();
     const [state, setState] = useState({
         tab: 0,
         checkedA: false,
         checkedB: false,
         checkedC: false,
-        checkedD: false,
-        checkedE: false,
-        checkedF: false,
+        amount: 20,
+        amountRoboParcial: 15,
+        amountChoque: 20,
+        amountAccidente: 50
     });
     const handleTabChange = (event, value) => {
-        setState({ tab: value });
+        setState({ ...state, tab: value });
     };
     const handleCheckChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
+        setState({
+            ...state, [event.target.name]: event.target.checked,
+            amount: event.target.checked ? state.amount + parseInt(event.target.value) : state.amount - parseInt(event.target.value)
+        });
     };
     const [expanded, setExpanded] = useState('panel1');
     const handleAcordionChange = (panel) => (event, newExpanded) => {
@@ -148,7 +153,7 @@ const FormCobertura = () => {
                                         </AccordionSummary>
                                     </div>
                                     <div>
-                                        <IOSSwitch checked={state.checkedA} onChange={handleCheckChange} name="checkedA" />
+                                        <IOSSwitch checked={state.checkedA} onChange={handleCheckChange} name="checkedA" value={state.amountRoboParcial} />
                                     </div>
                                 </div>
                                 <AccordionDetails>
@@ -173,7 +178,7 @@ const FormCobertura = () => {
                                         </AccordionSummary>
                                     </div>
                                     <div>
-                                        <IOSSwitch checked={state.checkedB} onChange={handleCheckChange} name="checkedB" />
+                                        <IOSSwitch checked={state.checkedB} onChange={handleCheckChange} name="checkedB" value={state.amountChoque} />
                                     </div>
                                 </div>
                                 <AccordionDetails>
@@ -198,7 +203,7 @@ const FormCobertura = () => {
                                         </AccordionSummary>
                                     </div>
                                     <div>
-                                        <IOSSwitch checked={state.checkedC} onChange={handleCheckChange} name="checkedC" />
+                                        <IOSSwitch checked={state.checkedC} onChange={handleCheckChange} name="checkedC" value={state.amountAccidente} />
                                     </div>
                                 </div>
                                 <AccordionDetails>
@@ -215,11 +220,11 @@ const FormCobertura = () => {
             </div>
             <div className="form-cobertura__footer">
                 <div className="footer__monto">
-                    <p className="footer__monto--primary">$35.00</p>
+                    <p className="footer__monto--primary">${state.amount}</p>
                     <span className="footer__monto--secondary">Mensual</span>
                 </div>
                 <div>
-                    <Button variant="contained" color="secondary" size="large" >
+                    <Button variant="contained" color="secondary" size="large" onClick={clickLoQuiero}>
                         Lo quiero
                     </Button>
                 </div>

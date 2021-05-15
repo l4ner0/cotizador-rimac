@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionVehicleYears, actionVehicleBrands } from '../../redux/cotizadorDucks';
+import { actionVehicleYears, actionVehicleBrands, actionRecordData } from '../../redux/cotizadorDucks';
 import Breadcrumbs from '../shared/breadcrumbs/Breadcrumbs';
 import FormMisDatos from '../shared/form/form-mis-datos/FormMisDatos';
+import { ARMA_TU_PLAN } from '../../router';
+import { useHistory } from 'react-router-dom';
 import './MisDatos.css';
 
 const MisDatos = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     useEffect(() => {
         getVehicleData()
@@ -20,25 +23,21 @@ const MisDatos = () => {
     }
 
     const { datos, vehicleYearsList, vehicleBrandsList } = useSelector(store => store.cotizadorRimac);
-    console.log("datos-misdatos: ", datos)
     let recoveredData;
     if (datos.nombre === undefined) {
-        console.log("recuperar de local storage")
         recoveredData = JSON.parse(localStorage.getItem("datos"));
     } else {
-        console.log("recuperar de state")
         localStorage.setItem("datos", JSON.stringify(datos));
         recoveredData = datos;
     }
     const { nombre, minimumAmount, maximumAmount } = recoveredData;
 
-   /*  const submitContinue = async (payload) => {
-        const { codRes, response } = await dispatch(actionQuoteInsurance(payload));
+    const submitContinue = async (payload) => {
+        const { codRes } = await dispatch(actionRecordData(payload));
         if (codRes === "00") {
-            localStorage.setItem("datos", JSON.stringify(response));
-            history.push('/mis-datos')
+            history.push(ARMA_TU_PLAN);
         }
-    } */
+    }
     return (
         <div>
             <Breadcrumbs step="1" stepTotal="2" value={50} />
@@ -51,6 +50,7 @@ const MisDatos = () => {
                 vehicleBrandsList={vehicleBrandsList}
                 minimumAmount={minimumAmount}
                 maximumAmount={maximumAmount}
+                submitContinue={submitContinue}
             />
         </div>
 

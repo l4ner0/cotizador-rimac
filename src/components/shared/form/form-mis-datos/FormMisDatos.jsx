@@ -33,7 +33,7 @@ const GreenRadio = withStyles({
 })((props) => <Radio required color="default" {...props} />);
 
 const FormMisDatos = (props) => {
-    const { vehicleYearsList, vehicleBrandsList, minimumAmount, maximumAmount } = props;
+    const { vehicleYearsList, vehicleBrandsList, minimumAmount, maximumAmount, submitContinue } = props;
     const classes = useStyles();
     const form = {
         year: '',
@@ -55,7 +55,7 @@ const FormMisDatos = (props) => {
         setState({ ...state, amount: newAmount });
     }
     const handleSubmit = (event) => {
-        console.log("continueButton: ", state)
+        submitContinue(state);        
         event.preventDefault();
     }
     return (
