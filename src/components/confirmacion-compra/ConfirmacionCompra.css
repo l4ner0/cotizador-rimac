@@ -1,0 +1,21 @@
+.confirma-compra__banner-img {
+    width: 100% !important;
+}
+.confirma-compra__content{
+    margin: 48px 32px 56px 32px;
+}
+.content__title {
+    font-family: 'Lato';
+    font-size: 25px;
+    color: #3f414b;
+    letter-spacing: -0.6px;
+}
+.content__title--subtitle {
+    color: #EF3340;
+}
+
+.content__text {
+    margin: 24px 0 40px;
+    color: #676F8F;
+    font-weight: 300;
+}

@@ -1,9 +1,8 @@
+body {
+    margin: 0;
+}
 .app {
     font-family: 'Roboto', sans-serif !important;
     max-width: 450px !important;
     margin: 0 auto;
-}
-
-.login {
-    padding: 0 32px;
 }

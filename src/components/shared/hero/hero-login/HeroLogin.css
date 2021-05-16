@@ -5,7 +5,7 @@ p {
 .hero {
     display: flex;
     font-family: 'Lato', sans-serif;
-    margin: 60px 0 20px 0;
+    margin: 60px 0 40px 0;
     padding: 0 30px;
     background-color: #F7F8FC;
 }
@@ -21,7 +21,7 @@ p {
 
 .text__content {
     color: #494F66;
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .text__content--red {
@@ -39,4 +39,6 @@ p {
 .hero__img {
     position: relative;
     right: -30px;
+    bottom: -15px;
+
 }

@@ -1,5 +1,9 @@
 .form-check {
-    margin: 32px 0;
+    margin: 24px 0;
+}
+
+.form-check .MuiFormControlLabel-label {
+    font-size: 12px;
 }
 
 .form-button {
