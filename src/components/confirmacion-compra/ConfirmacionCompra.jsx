@@ -23,7 +23,7 @@ const ConfirmacionCompra = () => {
                 <p className="content__title content__title--subtitle">¡Te damos la bienvenida!</p>
                 <p className="content__title">Cuenta con nosotros para proteger tu vehículo</p>
                 <p className="content__text">Enviaremos la confirmación de compra de tu Plan Vehícular Tracking a tu correo: joel.sanchez@gmail.com</p>
-                <Button type="submit" variant="contained" color="secondary" size="large" className={classes.root} >
+                <Button href="https://www.rimac.com/" variant="contained" color="secondary" size="large" className={classes.root} >
                     Cómo usar mi seguro
                 </Button>
             </div>

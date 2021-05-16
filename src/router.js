@@ -8,7 +8,7 @@ import ConfirmacionCompra from './components/confirmacion-compra/ConfirmacionCom
 export const LOGIN = '/cotizador-rimac';
 export const MIS_DATOS = '/cotizador-rimac/mis-datos';
 export const ARMA_TU_PLAN = '/cotizador-rimac/arma-tu-plan';
-export const CONFIRMACION_COMPRA = '/cotizador-rimac/confirmacion_compra';
+export const CONFIRMACION_COMPRA = '/cotizador-rimac/confirmacion-compra';
 
 const Routes = () => {
     return (

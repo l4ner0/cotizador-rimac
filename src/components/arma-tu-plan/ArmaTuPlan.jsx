@@ -4,7 +4,7 @@ import Breadcrumbs from '../shared/breadcrumbs/Breadcrumbs';
 import HeroArmaTuPlan from '../shared/hero/hero-arma-tu-plan/HeroArmaTuPlan';
 import FormCobertura from '../shared/form/form-cobertura/FormCobertura';
 import { actionRecordCoberturas } from '../../redux/cotizadorDucks';
-import { LOGIN, MIS_DATOS } from '../../router';
+import { MIS_DATOS, CONFIRMACION_COMPRA } from '../../router';
 import { useHistory } from 'react-router-dom';
 
 const ArmaTuPlan = () => {
@@ -25,7 +25,7 @@ const ArmaTuPlan = () => {
     const clickLoQuiero = async (payload) => {
         const { codRes } = await dispatch(actionRecordCoberturas(payload));
         if (codRes === "00") {
-            history.push(LOGIN);
+            history.push(CONFIRMACION_COMPRA);
         }
     }
     return (

@@ -1,11 +1,9 @@
-
+.form-container {
+    margin: 0 32px;
+}
 .form-titulo {
     font-size: 24px;
     font-family: 'Lato';
-    margin: 40px 0 24px 0;
     color: #494F66;
-}
-
-.form-container {
-    margin: 0 32px;
+    margin-bottom: 24px;
 }
