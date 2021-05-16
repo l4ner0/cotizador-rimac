@@ -9,7 +9,7 @@ const Hero = () => {
                 <p className="text__content">Seguro Vehicular <span className="text__content--red">Tracking</span></p>
                 <p className="text__footer">Cuentanos donde le haras seguimiento a tu seguro</p>
             </div>
-            <div>
+            <div className="hero__container-img">
                 <img className="hero__img" src="https://i.postimg.cc/R62KCkcD/client-banner.png" alt="cliente-banner" />
             </div>
         </div>
